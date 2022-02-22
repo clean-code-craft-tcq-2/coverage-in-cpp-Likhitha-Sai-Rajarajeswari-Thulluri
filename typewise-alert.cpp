@@ -22,10 +22,10 @@ std::pair<int, int> getTemperatureBreachValues(CoolingType coolingType)
   std::pair<int, int> breachValues{0,35};
   switch(coolingType) {
     case HI_ACTIVE_COOLING:
-      breachValues{0,45};
+      breachValues = {0,45};
       break;
     case MED_ACTIVE_COOLING:
-      breachValues{0,40};
+      breachValues = {0,40};
       break;
   }
   return breachValues;
