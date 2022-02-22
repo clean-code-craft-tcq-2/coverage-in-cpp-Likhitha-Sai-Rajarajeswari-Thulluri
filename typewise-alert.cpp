@@ -45,15 +45,16 @@ std::string sendToController(BreachType breachType) {
 }
 
 std::string sendToEmail(BreachType breachType, std::string recepient) {
-  std::string st;
+  std::string output;
   switch(breachType) {
     case TOO_LOW:
-      st = "To: "+recepient+" .Hi, the temperature is too low";
+      output = "To: "+recepient+" .Hi, the temperature is too low";
       break;
     case TOO_HIGH:
-      st = "To: "+recepient+" .Hi, the temperature is too high";
+      output = "To: "+recepient+" .Hi, the temperature is too high";
       break;
   }
+  return output;
 }
 
 void printOnConsole(std::string st)
