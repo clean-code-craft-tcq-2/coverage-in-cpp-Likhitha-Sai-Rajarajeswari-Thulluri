@@ -9,12 +9,12 @@ TEST_CASE("infers the breach according to limits") {
   REQUIRE(inferBreach(35, 20, 30) == TOO_HIGH);
 }
 
-// TEST_CASE("gets breach values based on cooling type")
-// {
-//   std::pair<int, int> breachValues = getTemperatureBreachValues(MED_ACTIVE_COOLING)
-//   REQUIRE(breachValues.first == 0);
-//   REQUIRE(breachValues.second == 40);
-// }
+TEST_CASE("gets breach values based on cooling type")
+{
+  std::pair<int, int> breachValues = getTemperatureBreachValues(MED_ACTIVE_COOLING);
+  REQUIRE(breachValues.first == 0);
+  REQUIRE(breachValues.second == 40);
+}
 
 TEST_CASE("classifies temperature breach")
 {
