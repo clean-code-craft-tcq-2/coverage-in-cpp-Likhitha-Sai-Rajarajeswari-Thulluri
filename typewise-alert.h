@@ -25,8 +25,10 @@ typedef struct {
   char brand[48];
 } BatteryCharacter;
 
+std::pair<int, int> getTemperatureBreachValues(CoolingType coolingType);
 void checkAndAlert(
   AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
 
-void sendToController(BreachType breachType);
-void sendToEmail(BreachType breachType);
+std::string sendToController(BreachType breachType);
+std::string sendToEmail(BreachType breachType, std::string recepient);
+void printOnConsole(std::string st);
