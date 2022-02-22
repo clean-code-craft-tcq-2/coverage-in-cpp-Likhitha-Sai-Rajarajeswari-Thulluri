@@ -1,5 +1,5 @@
 #include "typewise-alert.h"
-#include <stdio.h>
+#include <iostream>
 #include <string>
 
 BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
@@ -58,5 +58,5 @@ std::string sendToEmail(BreachType breachType, std::string recepient) {
 
 void printOnConsole(std::string st)
 {
-  printf("%s\n", st);
+  std::cout<<st<<std::endl;
 }
