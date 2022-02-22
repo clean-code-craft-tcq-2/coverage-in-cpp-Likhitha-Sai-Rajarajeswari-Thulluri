@@ -1,6 +1,7 @@
 #include "typewise-alert.h"
 #include <iostream>
 #include <string>
+#include <sstream>
 
 BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
   if(value < lowerLimit) {
@@ -19,7 +20,7 @@ BreachType classifyTemperatureBreach(CoolingType coolingType, double temperature
 
 std::pair<int, int> getTemperatureBreachValues(CoolingType coolingType)
 {
-  std::pair<int, int> breachValue{0,35};
+  std::pair<int, int> breachValues{0,35};
   switch(coolingType) {
     case HI_ACTIVE_COOLING:
       breachValues{0,45};
@@ -28,7 +29,7 @@ std::pair<int, int> getTemperatureBreachValues(CoolingType coolingType)
       breachValues{0,40};
       break;
   }
-  return breachValue;
+  return breachValues;
 }
 
 void checkAndAlert(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC) {
